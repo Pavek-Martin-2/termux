@@ -1,0 +1,24 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+alpha=( [10]="a" {b..z} {A..Z} {0..9} )
+
+declare -A color=(
+[red]='#FF0000'
+[green]='#00FF00'
+[blue]='#0000FF'
+)
+# asociativni pole
+
+export vars=$( declare -p alpha color )
+
+declare -p vars
+declare -p vars > save_5
+sleep 0.2
+
+#unset alpha color vars
+
+source save_5
+bash -c 'eval "$vars"; declare -p alpha color'
+
+#declare -p vars
+

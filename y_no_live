@@ -1,0 +1,23 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+
+: '
+
+https://youtu.be/87jV1KmNPYQ?feature=shared
+https://youtu.be/Aiqg5T-Jhrs?feature=shared
+https://www.youtube.com/live/Aiqg5T-Jhrs?feature=shared
+https://youtu.be/nV5ZBC9rrXs?feature=shared
+https://www.youtube.com/live/nV5ZBC9rrXs?feature=shared
+'
+#url='https://youtu.be/87jV1KmNPYQ?feature=shared'
+url='https://www.youtube.com/live/nV5ZBC9rrXs?feature=shared'
+
+# odebrani live
+if [[ $url == *"/live/"* ]]; then
+echo "upraveno live"
+echo $url
+no_live=${url:29:${#url}}
+url="https://youtu.be/"$no_live
+echo $url
+fi
+

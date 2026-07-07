@@ -1,0 +1,14 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+url="https://youtube.com/shorts/lpEeBWvYieA?feature=shared"
+
+
+# odebrani shorts
+if [[ $url == *"/shorts/"* ]]; then
+echo "upraveno shorts"
+echo $url
+no_shorts=${url:27:${#url}}
+url="https://youtu.be/"$no_shorts
+echo $url
+fi
+

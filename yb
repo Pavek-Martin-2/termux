@@ -1,0 +1,111 @@
+#!/data/data/com.termux/files/usr/bin/bash
+if [ -z "$1" ]
+then
+h=${0##*/}
+echo $h" 'https://youtu.be/2PNY4RxISKw'"
+echo $h" 'https://youtu.be/2PNY4RxISKw t = /tech/'"
+echo $h" 'https://youtu.be/2PNY4RxISKw r = /ruzne/'"
+echo $h" 'https://youtu.be/2PNY4RxISKw h = /hry/'"
+echo $h" 'https://youtu.be/2PNY4RxISKw v = /vedecke/'"
+echo $h" 'https://youtu.be/2PNY4RxISKw f = /film/'"
+echo $h" 'https://youtu.be/2PNY4RxISKw c = /cssr/'"
+echo $h" 'https://youtu.be/2PNY4RxISKw n = /nezarazeno/'"
+echo $h" 'https://youtu.be/2PNY4RxISKw d = /dokumentarni/'"
+exit 1
+fi
+
+if [ -z "$2" ]
+then
+echo "hledam channel"
+channel=$(yt-dlp --get-filename -o '%(channel)s' $1)
+echo $channel
+#declare -p channel
+#a=("aa" "AA" "bb" "BB" "cc" "CC")
+#a=("aa" "AA" "bb" "BB" "cc" "CC" "kk")
+#a=("aa" "AA")
+#a=()
+a=("faraon" "Radovan" "NA" "neni_z_youtube")
+#declare -p a
+la=${#a[@]}
+#echo $la
+m=$(( $la % 2 ))
+#echo $m
+if [ $m != 0 ]
+then
+echo "chybna delka pole $a"
+exit 1
+fi
+for (( i=0; i<$la; i=i+2 ))
+do
+k=${a[$i]}
+#echo "${a[$i]}"
+#echo $k
+if [ "$k" == "$channel" ]
+then
+channel=${a[$i+1]}
+echo "shoda v poly"
+break
+fi
+done
+echo $channel
+#declare -p channel
+adresar=$channel
+
+elif [ $2 == "t" ]
+then
+adresar="tech"
+elif [ $2 == "r" ]
+then
+adresar="ruzne"
+elif [ $2 == "h" ]
+then
+adresar="hry"
+elif [ $2 == "v" ]
+then
+adresar="vedecke"
+elif [ $2 == "f" ]
+then
+adresar="film"
+elif [ $2 == "d" ]
+then
+adresar="dokumentarni"
+elif [ $2 == "c" ]
+then
+adresar="cssr"
+elif [ $2 == "n" ]
+then
+adresar="nezarazeno"
+else
+adresar="nezarazeno"
+fi
+
+if [ -z "$adresar" ]
+then
+adresar="nezarazeno"
+fi
+#echo "/"$adresar"/"
+adresar2="${adresar// /_}"
+#echo $adresar2
+mkdir -p ~/storage/external-1/youtube_videa/$adresar2
+echo $1
+#rm -v ~/storage/external-1/youtube_videa/$adresar2/*.part
+#sleep 3
+set -o history
+yt-dlp --no-colors -c -nc -f 'best[ext=mp4]' -o ~/storage/external-1/youtube_videa/"$adresar2/%(title)s.%(ext)s" $1
+last=$(echo `history |tail -n2 |head -n1` | sed 's/[0-9]* //')
+for (( ; ; ))
+do
+ls ~/storage/external-1/youtube_videa/$adresar2 | grep ".mp4.part" > /dev/null
+if [[ $? == "0" ]]
+then
+echo "nula je .mp4.part pokracovat"
+sleep 10
+echo $last
+eval $last
+else
+echo "jedna neni *.mp4.part"
+echo ">>> STAZENO <<<"
+exit 1
+fi
+done
+echo ">>> STAZENO <<<"

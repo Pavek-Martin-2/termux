@@ -1,0 +1,12 @@
+#!/data/data/com.termux/files/usr/bin/bash
+ovoce=jahoda
+typ=zadne
+echo "Zkus uhodnout ovoce !"
+echo
+until [ "$typ" = "$ovoce" ]
+do
+echo \ "Tvuj typ ? "
+read typ
+done
+echo "Ano spravne ! "
+

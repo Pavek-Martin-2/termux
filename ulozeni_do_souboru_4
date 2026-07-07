@@ -1,0 +1,15 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+bin=$(printf 'a\tb\nc\0d' | base64 )
+#tb je tabulator
+declare -p bin
+declare -p bin >save_4
+sleep 0.2
+
+unset bin
+#declare -p bin
+
+source save_4
+declare -p bin
+
+base64 -d <<<"$bin" | od -c

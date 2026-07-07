@@ -1,0 +1,12 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+# stopky
+# cykluje dokud neni 59 sekund
+
+while [ $(date +%S) -lt 59 ]
+#while [ $(date +%S) -gt 00 ]
+do
+echo $(date +%S)
+sleep 1
+done
+

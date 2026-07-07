@@ -1,0 +1,20 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+content=ls
+content_2=pwd
+
+declare -p content >save_2
+declare -p content_2 >>save_2
+
+unset content content_2
+
+source save_2
+
+echo $content
+echo $content_2
+
+eval $content
+eval $content_2
+
+
+

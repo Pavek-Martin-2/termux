@@ -1,0 +1,35 @@
+#!/data/data/com.termux/files/usr/bin/bash
+if [ -z "$1" ]
+then
+echo "help"
+h=${0:36:${#0}}
+echo $h" 'https://youtu.be/2PNY4RxISKw'"
+exit 1
+fi
+
+o=${1:${#1}-11:${#1}}
+echo ">"$o"<"
+
+#exit 1
+
+#aa="wget -O ~/storage/downloads/"$o".jpg 'https://img.youtube.com/vi/"$o"/maxresdefault.jpg'"
+p=("maxresdefault" "sddefault" "hqdefault" "mqdefault")
+for i in {0..3}
+do
+#aa="wget -O ~/storage/downloads/"
+aa="wget -O /data/data/com.termux/files/home/screenshots/"
+aa+=$o
+aa+=".jpg "
+aa+="https://img.youtube.com/vi/"
+aa+="$o"
+aa+="/"
+aa+=${p[$i]}
+aa+=".jpg"
+#echo "** "$aa
+eval $aa
+if [ $? == 0 ]
+then
+exit 1
+fi
+done
+

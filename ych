@@ -1,0 +1,25 @@
+#!/data/data/com.termux/files/usr/bin/bash
+if [ -z "$1" ]
+then
+echo "ych help"
+h=${0:36:${#0}}
+echo $h" 'https://youtube.com/c/TadyKovy'"
+exit 1
+fi
+
+set -o history
+youtube-dl -c -nc -i -f 'worst[ext=mp4]' -o '%(title)s.%(ext)s' $1
+last=$(echo `history |tail -n2 |head -n1` | sed 's/[0-9]* //')
+for (( ; ; ))
+do
+ls | grep ".mp4.part"
+if [[ $? == "0" ]]
+then
+echo "nula je .mp4.part pokracovat"
+echo $last
+eval $last
+else
+echo "jedna neni *.mp4.part"
+echo ">>> VSE STAZENO <<<"
+exit 1
+fi

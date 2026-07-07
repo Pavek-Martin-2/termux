@@ -1,0 +1,30 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+#content=("A" "B" "C" "D" "E" "F")
+content=()
+content[0]="A"
+content[1]="B"
+content[2]="C"
+content[3]="D"
+content[4]="E"
+content[5]="F"
+
+declare -p content
+declare -p content >save_3
+sleep 0.2
+cat save_3
+
+unset content
+#declare -p content
+
+source save_3
+declare -p content
+
+len_content=${#content[@]}
+echo $len_content
+
+for (( aa = 0; aa <= $len_content - 1; aa++))
+do
+echo ${content[$aa]}
+done
+

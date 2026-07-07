@@ -1,0 +1,30 @@
+#!/data/data/com.termux/files/usr/bin/bash
+if [ -z "$1" ]
+then
+echo "help"
+echo $0" 'https://youtu.be/2PNY4RxISKw'"
+exit 1
+fi
+
+echo $1
+rm -v ~/storage/external-1/*.part
+sleep 3
+set -o history
+youtube-dl --recode-video avi -k --prefer-ffmpeg -c -nc -f 'worst[ext=mp4]' -o ~/storage/external-1/"%(title)s.%(ext)s" $1
+last=$(echo `history |tail -n2 |head -n1` | sed 's/[0-9]* //')
+#ls storage/external-1/ | grep "part" > /dev/null
+
+for (( ; ; ))
+do
+ls storage/external-1/ | grep ".part" > /dev/null
+if [[ $? == "0" ]]
+then
+#echo "nula je part opakovat"
+sleep 10
+eval $last
+else
+#echo "jedna neni *.part"
+echo ">>> STAZENO <<<"
+exit 1
+fi
+done

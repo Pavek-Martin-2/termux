@@ -1,0 +1,31 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+verze () {
+ted=$(yt-dlp --version)
+#echo $ted
+#echo $ted | rev
+ted_2=${ted:8:1}
+ted_2+=${ted:9:1}
+ted_2+="."
+ted_2+=${ted:5:1}
+ted_2+=${ted:6:1}
+ted_2+="."
+ted_2+=${ted:0:4}
+echo $ted_2
+}
+
+cd ~
+#d=$(date +%d%m%Y)
+d=$(date +%Ut%y)
+#echo $s
+cp -v /data/data/com.termux/files/usr/bin/yt-dlp /data/data/com.termux/files/usr/bin/yt-dlp_old_$d
+sleep 5
+#yt-dlp --version
+verze
+echo "soucasna verze"
+yt-dlp -U
+#yt-dlp --version
+verze
+echo "upgadovana verze"
+echo "hotovo"
+

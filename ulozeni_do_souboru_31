@@ -1,0 +1,32 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+content=()
+
+max=10
+#max=1000
+
+for (( aa = 0; aa <= $max - 1; aa++))
+do
+
+content[$aa]=$RANDOM
+done
+
+#declare -p content
+declare -p content >save_31
+sleep 0.5
+#cat save_31
+
+unset content
+#declare -p content
+
+source save_31
+declare -p content
+
+len_content=${#content[@]}
+#echo $len_content
+
+for (( bb = 0; bb <= $len_content - 1; bb++))
+do
+echo ${content[$bb]}
+done
+

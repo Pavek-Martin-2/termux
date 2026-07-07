@@ -1,0 +1,28 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+# ffmpeg -i vstup.mp3 -af "volume=2.0" vystup.mp3
+# funguje
+
+if [ -z "$1" ]
+then
+h=${0##*/}
+echo $h" input_video.mp4"
+exit 1
+fi
+
+p=$PWD"/"
+#echo $p
+in=$p$1
+echo $in
+
+input_name="${in%.*}"
+#echo $input_name
+input_ext="${in##*.}"
+#echo $input_ext
+output_file_name=$input_name"_up."$input_ext
+echo $output_file_name
+sleep 3
+
+# zvuk o 100 procent, video nic
+ffmpeg -i $in -filter:a "volume=2.0" -c:v copy $output_file_name
+echo "hlasitost zvisena o 100 procent"

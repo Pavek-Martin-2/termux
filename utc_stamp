@@ -1,0 +1,10 @@
+#!/data/data/com.termux/files/usr/bin/bash
+echo $(date -u)
+echo $(date -u +%H:%M)
+echo $(date -u +%s)
+#
+echo $(date)
+echo $(date +%H:%M)
+echo $(date +%s)
+
+# ve stamp nejni rozdil (-u a bez)

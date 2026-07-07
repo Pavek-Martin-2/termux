@@ -1,0 +1,10 @@
+#!/data/data/com.termux/files/usr/bin/bash
+cislo=0
+while [ $cislo -lt 100 ]
+do
+echo \ "$cislo"
+cislo=$(expr $cislo + 5)
+done
+echo $cislo
+
+

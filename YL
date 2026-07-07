@@ -1,0 +1,4 @@
+#!/data/data/com.termux/files/usr/bin/bash
+echo $1
+youtube-dl --username=fio16733@uooos.com --password=MwT5f2EzGeVTjfs $1
+
