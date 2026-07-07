@@ -1,0 +1,11 @@
+
+
+ffmpeg -i Martan.avi -vol 2048 -vcodec copy Martan_up.mp4
+
+
+ffmpeg -i audio.mp3 -vol 1024 -vcodec copy audio_2.mp3
+funguje pro mp3
+
+
+
+

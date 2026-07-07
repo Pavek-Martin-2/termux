@@ -1,0 +1,8 @@
+
+
+convert -rotate 90 in.jpg out.jpg 
+po smeru rucicek 90 stupnu
+
+270 poroto smeru rucicek 90 stupnu
+cili
+convert -rotate 270 in.jpg out.jpg 

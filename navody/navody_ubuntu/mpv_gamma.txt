@@ -1,0 +1,17 @@
+mpv --gamma=30 video.mp4
+mvp --gamma=-10 video.mp4
+REM nasatvi gamma na 30 ( klavesa 5,6 )
+
+mpv --contrast=-10
+mpv --contrast=10
+klavesa 1,2
+
+
+mpv --brightness=-10
+mpv --brightness=10
+klavesa 3,4
+
+mpv -fs --brightness=10 --contrast=10 --gamma=10 osoto_guruma_10x.mp4
+
+
+

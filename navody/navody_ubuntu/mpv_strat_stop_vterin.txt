@@ -1,0 +1,9 @@
+
+
+
+mpv --fs --mute --start=5 --end=10 --speed=0.5 in.mp4
+
+REM start 5 vterin videa 
+REM a stop 10 vterin
+REM nelze kombinovat z --loop
+

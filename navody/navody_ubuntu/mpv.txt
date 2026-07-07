@@ -1,0 +1,10 @@
+
+cat mpv_all_options.txt | grep play
+
+mpv.exe 'C:\Users\DELL\Videos\Kristina\Video by thevioletbook_1718978895.mp4'
+mpv.exe 'C:\Users\DELL\Videos\Kristina\Video by thevioletbook_1718978895.mp4' --speed=0.1
+mpv.exe --speed=0.3 'C:\Users\DELL\Videos\Kristina\Video by thevioletbook_1718978895.mp4'
+funguje
+
+mpv.exe --loop --speed=0.5 'C:\Users\DELL\Videos\Kristina\Video by thevioletbook_1718978895.mp4'
+

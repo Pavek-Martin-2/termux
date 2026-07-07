@@ -1,0 +1,30 @@
+
+ffmpeg -i 000.ts -s 960x540 solar.mp4 <-- snizeni kvality videa
+
+
+ffmpeg -ss 00:00:00 -i input.mp4 -t 00:00:06 -c copy output.mp4 -y
+
+
+od zacatku videa ulozi 6 vterin do o.mp4
+-y = prepis bez ptani
+
+
+ffmpeg -ss 00:00:06 -i input.mp4 -t 00:00:09 -c copy output.mp4 -y
+zacne ukladat na 6 vterine videa a odsud ulozi 9 vterin
+
+funguje vyzkouseno
+
+
+
+---
+
+ffmpeg -i lh_lidl.mp4 -t 00:00:03 -c copy output.mp4 -y
+vezme prvni 3 vteriny z videa a ulozi je do output.mp4 zbytek vynecha
+
+
+opak
+ffmpeg -i lh_lidl.mp4 -ss 00:00:03 -c copy output.mp4 -y
+ulozi do output.mp4 vsechno krome prvnich 3 vterin
+
+funguje vyzkouseno
+

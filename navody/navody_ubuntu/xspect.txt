@@ -1,0 +1,14 @@
+
+xspect -vga-mode 320x240 -load-immed -quick-load kruh.tap
+
+
+xspect -vga-mode 320x240 -load-immed -quick-load -auto-stop kruh.tap
+
+
+xspect -keyboard-type spectrum -vga-mode 320x240 -load-immed -quick-load -auto-stop kruh.tap
+
+
+
+
+
+

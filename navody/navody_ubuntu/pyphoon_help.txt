@@ -1,0 +1,24 @@
+usage: pyphoon [-h] [-n LINES] [-x] [-l [LANGUAGE]]
+               [-s {north,south} | -S {north,south}]
+               [date]
+
+Show Phase of the Moon
+
+positional arguments:
+  date                  Date for that the phase of the Moon must be shown.
+                        Today by default
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -n LINES, --lines LINES
+                        Number of lines to display (size of the moon)
+  -x, --notext          Print no additional information, just the moon
+  -l [LANGUAGE], --language [LANGUAGE]
+                        locale for that the phase of the Moon must be shown.
+                        English by default
+  -s {north,south}, --hemisphere {north,south}
+                        Earth hemisphere from which to observe the Moon. North
+                        by default
+  -S {north,south}, --hemispherewarning {north,south}
+                        The same as -s and --hemisphere, but shows an
+                        hemisphere reminder under the phase text.
