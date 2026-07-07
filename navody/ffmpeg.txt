@@ -1,0 +1,18 @@
+
+ffmpeg -i 000.ts -s 960x390 solar.mp4
+snizi rozliseni videa z 1920x780 na 390x390 tzn. 1/4
+------
+
+ffmpeg -stream_loop 10 -i tereza_balonstory_2.mp4 -c copy tereza_balonstory_5.mp4
+udela kopi videa (loop) ve stejnym souboru
+-----
+pozor tady na -t
+ffmpeg -i input.mp3 -ss 00:30:00  -t 00:01:00 --acodec copy output.mp3
+od 30tí minuty, jednu minutu
+-----
+vyrez z videa od-do funguje termux
+ffmpeg -i a.mp4 -ss 00:09:25  -t 00:10:30 -c copy output3.mp4
+-ss=start-cas    -t=stop-cas
+---
+
+

@@ -1,0 +1,5 @@
+
+ffmpeg -i input.mp3 -af 'volume=1.5' output.mp3
+
+
+
