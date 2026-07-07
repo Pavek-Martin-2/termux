@@ -1,0 +1,2 @@
+ffmpeg -i input.mp3 -af  "volume=2.0" output.mp3
+funguje pro ffmpeg verze 8.1 zde v tabletu
