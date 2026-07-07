@@ -1,0 +1,21 @@
+Application version:
+unsupported
+Packages CPU architecture:
+aarch64
+Subscribed repositories:
+# sources.list
+deb https://deb.kcubeterm.me/termux-main/ stable main
+# game-repo (sources.list.d/game.list)
+deb https://packages.termux.org/apt/termux-games games stable
+# science-repo (sources.list.d/science.list)
+deb https://packages.termux.org/apt/termux-science science stable
+Updatable packages:
+All packages up to date
+Android version:
+7.0
+Kernel build information:
+Linux localhost 3.18.35+ #1 SMP PREEMPT Thu Feb 27 10:01:02 CST 2020 aarch64 Android
+Device manufacturer:
+LENOVO
+Device model:
+Lenovo TB-8304F1

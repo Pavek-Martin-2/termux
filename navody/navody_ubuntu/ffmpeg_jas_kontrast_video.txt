@@ -1,0 +1,37 @@
+nastaveni jasu a kontrastu videa
+-----------------------------------
+
+ffmpeg -i in.mp4 -vf "eq=brightness=0.1" out_1.mp4
+lehke zesvetleni
+
+
+ffmpeg -i in.mp4 -vf "eq=brightness=0.3" out_2.mp4
+vyraznejsi zesvetleni
+
+-----------------------------------------------------------------
+
+
+ffmpeg -i in.mp4 -vf "eq=brightness=0.1:contrast=1.2" out_3.mp4
+
+ffmpeg -i in.mp4 -vf "eq=brightness=0.3:contrast=1.2" out_4.mp4
+
+ffmpeg -i in.mp4 -vf "eq=brightness=0.3:contrast=1.2:gamma=3" out_5.mp4
+
+------------------ parametry cmd ---------------------------------
+mpv --contrast=3 spojene_Kour_1990.mp4
+
+mpv --brightness=3 spojene_Kour_1990.mp4
+
+mpv --gamma=3 spojene_Kour_1990.mp4
+
+set vid="--contrast=3 --brightness=3 --gamma=3"
+
+
+
+
+
+
+
+
+
+

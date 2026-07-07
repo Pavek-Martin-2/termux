@@ -1,0 +1,12 @@
+
+-ne porovnava nerovnost
+-eq porovnava rovnost
+-lt mensi nez
+-le mensi nebo roven
+-gt vetsi nez
+-ge vetsi nebo roven
+= porovnani retezce
+!= nerovnost retezce
+
+
+

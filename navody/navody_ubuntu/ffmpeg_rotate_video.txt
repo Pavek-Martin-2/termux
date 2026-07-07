@@ -1,0 +1,8 @@
+
+
+ffmpeg -i in.mp4 -vf "transpose=2" out.mp4
+
+0 = over clock and vertical flip
+1 = 90 clock
+2 = 90 over clock
+3 = 90 clock and vertical flip

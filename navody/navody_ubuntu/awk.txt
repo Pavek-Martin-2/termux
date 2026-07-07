@@ -1,0 +1,15 @@
+
+
+cat a.txt | awk -F' ' '{print $10}' # rozdeli podle mezery
+cat a.txt | awk -F'.' '{print $10}' # rozdelovar je tecka
+
+cat a.txt | awk -F' ' '{print $1 $10}'
+
+
+
+
+
+
+
+
+

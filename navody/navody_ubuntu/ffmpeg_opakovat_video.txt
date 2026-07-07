@@ -1,0 +1,16 @@
+
+
+ffmpeg -stream_loop 10 -i tereza_balonstory_2.mp4 -c copy tereza_balonstory_5.mp4
+udela kopie videa (loop) ve stejnym souboru
+
+ffmpeg -stream_loop 10 -i in.mp4 in10x.mp4
+
+
+
+
+zde toto
+ffmpeg -stream_loop 10 -i in.mp4 -c:a copy in10x.mp4 
+
+
+-----
+

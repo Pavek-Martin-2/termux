@@ -1,0 +1,18 @@
+
+ffmpeg -i a.mp4 -filter:v "crop=iw/2:ih:0:0" leva_pulka.mp4 -y
+
+ffmpeg -i a.mp4 -filter:v "crop=iw/2:ih:iw/2:0" prava_pulka.mp4 -y
+
+
+ffmpeg -i a.mp4 -filter:v "crop=ih/2:iw/2" prostredni_tretina.mp4 -y
+
+ffmpeg -i a.mp4 -filter:v "crop=ih/2:iw:0:0" horejsi_pulka.mp4 -y
+
+
+???
+
+ffmpeg -i a.mp4 -filter:v "crop=ih/2:iw:0:2" dolejsi_pulka.mp4 -y
+
+ffmpeg -i a.mp4 -filter:v "crop=ih/2/2:iw:0:0" leva_horni_ctvrtina.mp4 -y
+
+

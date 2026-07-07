@@ -1,0 +1,1 @@
+xspect -load-immed -quick-load -auto-stop ovca.tap

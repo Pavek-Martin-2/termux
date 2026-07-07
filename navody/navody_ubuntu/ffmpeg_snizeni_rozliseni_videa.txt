@@ -1,0 +1,38 @@
+
+960x540 - 1:4  - pro videa z televize HD ct 24 apod.
+
+
+ffmpeg -i Viola_Cernodrinska.mp4 -s 640x360 Viola_Cernodrinska_low.mp4
+
+
+ffmpeg -i 000.ts -s 960x390 solar.mp4
+
+snizi rozliseni videa z 1920x780 na 390x390 tzn. 1/4
+
+
+
+z ctv toto
+ffmpeg -i 000.ts -s 640x360 tretina_puvodniho.mp4
+
+----------------- dalsi moznosti -------------- fungujou na Windows
+
+
+ffmpeg -i in.mp4 -vf "scale=iw*2:ih*2:flags=lanczos" -c:a copy 200_1.mp4
+funguje 200 % video z 320x200 zvetsil na 640x400, + pouze copy audio
+
+ffmpeg -i in.mp4 -vf "scale=iw*2:ih*2:flags=lanczos" 200_2.mp4
+lanczos = vysoce kvalitni filtr
+
+ffmpeg -i in.mp4 -vf "scale=iw*2:ih*2" 200_3.mp4
+
+ffmpeg -i in.mp4 -vf "scale=iw*3:ih*3:flags=lanczos" 300_1.mp4
+300 % z 320x200 zvetsil video na 960x200
+
+
+ffmpeg -i in.mp4 -vf "scale=iw*1:ih*1:flags=lanczos" 50_1.mp4
+naopak zmenseni na polovinu ze 320x200 zmansil na 160x100
+
+
+
+
+

@@ -1,0 +1,74 @@
+
+
+ffmpeg -i source.mp4 -filter:v "setpts=9.1*PTS" output.mp4
+
+ffmpeg -i source.mp4 -filter:v "setpts=0.5*PTS" output.mp4
+
+ffmpeg -i source.mp4 -filter:v "setpts=0.1*PTS" output.mp4
+
+2.0
+9.1 = zpomaluje
+
+0.5 ; 0.1 zrychuje
+
+
+-- jina metoda --- zda se ze lepsi
+
+ffmpeg -itsscale 0.3 -i source.mp4 -c copy o5.mp4 -- toto spomali video ale zvuk necha puvodni !!
+
+ffmpeg -itsscale 0.3 -i source.mp4 o5.mp4 -- toto spomali video ale zvuk necha puvodni !! <<<<<<<<<< zde 
+
+2.0 spomaluje
+0.5 zrychluje
+ 
+--------------------------------------------------------------------------------
+9.1 = zpomaluje
+0.5 ; 0.1 zrychuje
+
+tak zde toto pouzivat !!!
+ffmpeg -i out2.mp4 -filter:v "setpts=9.1*PTS" out3.mp4
+
+ffmpeg -i out2.mp4 -filter:v "setpts=2*PTS" polovina_puvodni_rychlosti.mp4
+
+ffmpeg -i out2.mp4 -filter:v "setpts=3*PTS" tretina_puvodni_rychlosti.mp4 -- taky, spomali video ale zvuk puvodni !!
+
+---------------------------- zde  --------------------
+
+REM polovicni rychlost videa a zvuku 
+ffmpeg -i in.mp4 -filter:v "setpts=2.0*PTS" -filter:a "atempo=0.5" polovicni_rychlost_videa_i_zvuku.mp4
+
+
+REM polovicni rychlost videa a zvuku 
+ffmpeg -i in.mp4 -filter:v "setpts=2.0*PTS" -filter:a "atempo=0.5" polovicni_rychlost_videa_i_zvuku.mp4
+
+REM zretezeni vystup --> vstup bat soubor
+ffmpeg -i in.mp4 -filter:v "setpts=2.0*PTS" -filter:a "atempo=0.5" polovina.mp4 <<<<<<<<<<<<<<<<<<<
+ffmpeg -i polovina.mp4 -filter:v "setpts=2.0*PTS" -filter:a "atempo=0.5" ctvrtina.mp4
+ffmpeg -i ctvrtina.mp4 -filter:v "setpts=2.0*PTS" -filter:a "atempo=0.5" osmina.mp4
+ffmpeg -i osmina.mp4 -filter:v "setpts=2.0*PTS" -filter:a "atempo=0.5" sestnactina.mp4
+
+REM =4.0 a =0.3 nejde !! - Value 0.300000 for parameter 'tempo' out of range [0.5 - 100]
+REM vyrazne zrychlovat zvuk jde ale vyrazne zpomalovet nejde a musi se retezit !!!
+
+
+REM a naopak 2x rychlejsi
+ffmpeg -i in.mp4 -filter:v "setpts=0.5*PTS" -filter:a "atempo=2.0" dvojita_rychlost_videa_i_zvuku.mp4
+
+REM 4x rychleji
+ffmpeg -i in.mp4 -filter:v "setpts=0.25*PTS" -filter:a "atempo=4.0" ctyrnasobna_rychlost_videa_i_zvuku.mp4
+
+REM staci jenom -vf   -af (PTS musi bejt)
+ffmpeg -i in.mp4 -vf setpts=2.0*PTS -af atempo=0.5 out.mp4 -y
+
+
+
+
+
+
+
+
+
+
+
+
+

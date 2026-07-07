@@ -1,0 +1,10 @@
+
+ffmpeg -i input.mp4 -vf reverse output_reverse_video.mp4
+
+ffmpeg -i input.mp4 -vf reverse -af areverse output_reverse_video_and_audio.mp4
+
+-af audio ( pozor Areverse ! )
+-vf video
+
+
+

@@ -1,0 +1,28 @@
+
+ffmpeg -i in.mp4 -vf "eq=brightness=0.1" -c:a copy out.mp4
+
+ffmpeg -i in.mp4 -vf "eq=brightness=0.1:contrast=1.2" -c:a copy out.mp4
+
+brightnes od -1.0 do 1.0
+0.1 = lehke zesvetleni, 0.3 = vyraznejsi zesvetleni
+
+nebo alternativa
+ffmpeg -i in.mp4 -vf "curves=lighter" out.mp4 ( ndela pak nahledy videa v pruzkumnikovy ale ?)
+
+
+ZDE nejlepsi 
+ffmpeg -i in.mp4 -vf "eq=brightness=0.05:contrast=1.05" -c:a copy out005-105.mp4
+
+
+------------------ parametry cmd ---------------------------------
+mpv --contrast=3 spojene_Kour_1990.mp4
+
+mpv --brightness=3 spojene_Kour_1990.mp4
+
+mpv --gamma=3 spojene_Kour_1990.mp4
+
+set vid="--contrast=3 --brightness=3 --gamma=3"
+
+
+
+

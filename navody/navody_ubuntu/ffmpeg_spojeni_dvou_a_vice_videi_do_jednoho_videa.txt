@@ -1,0 +1,19 @@
+
+cat a.txt
+file 'jedna.mp4'
+file 'dve.mp4'
+file 'jedna.mp4'
+file 'dve.mp4'
+file 'jedna.mp4'
+file 'dve.mp4'
+
+
+
+ffmpeg -f concat -i a.txt -c copy oo333.mp4
+
+
+ffmpeg -f concat -i a.txt all_1.mp4
+lepsi takto
+
+
+funguje jak v dosu tam v ubuntu

@@ -1,0 +1,18 @@
+
+
+zip -r -9 -P "zde heslo" ubuntu.zip ubuntu/
+zip -r -9 -P "$p" ubuntu.zip ubuntu/
+
+zip -t -P "zde heslo" ubuntu.zip
+zip -l -P "zde heslo" ubuntu.zip
+
+unzip -x -P "zde heslo" ubuntu.zip 
+
+p="ewiuhyrf iuebwiuweherwiuruiew" 
+echo $p
+declare -p p 
+unzip -t -P "$p" ubuntu.zip 
+unzip -l -P "$p" ubuntu.zip 
+
+mkdir bb
+unzip -x -P "$p" ubuntu.zip -d bb/
