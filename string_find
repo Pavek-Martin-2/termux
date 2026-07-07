@@ -1,0 +1,15 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+url='https://www.youtube.com/live/nV5ZBC9rrXs?feature=shared'
+
+# odebrani live
+
+if [[ $url == *"/live/"* ]]; then
+
+echo "upraveno live"
+echo $url
+no_live=${url:29:${#url}}
+url="https://youtu.be/"$no_live
+echo $url
+fi
+

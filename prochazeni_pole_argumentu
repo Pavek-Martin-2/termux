@@ -1,0 +1,9 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+set -- "aa" "bb" "cc"
+# toto nahradit za $1 $2 $3 atd.
+
+for i in $* ; do
+echo $i
+done
+

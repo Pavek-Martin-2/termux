@@ -1,0 +1,2 @@
+#!/data/data/com.termux/files/usr/bin/bash
+speedtest > ~/speedtest.log && cat ~/speedtest.log | grep 'Download\|Upload' || echo "C H Y B A  W I F I"

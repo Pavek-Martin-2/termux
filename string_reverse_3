@@ -1,0 +1,18 @@
+#!/usr/bin/bash
+
+if [ -z "$1" ]
+then
+h=${0##*/}
+echo $h' "Zde nejaky text"'
+exit 1
+fi
+
+text=$1
+echo $text
+
+for (( i=${#text} -1; i>=0; i-- )); do
+obracene+=${text:$i:1}
+#ani nemusi bejt napred definovanej !
+done
+
+echo $obracene

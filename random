@@ -1,0 +1,6 @@
+#!/data/data/com.termux/files/usr/bin/bash
+while true
+do
+echo $(($RANDOM %2))
+sleep 5
+done

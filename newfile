@@ -1,0 +1,24 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+if [ -z "$2" ]; then
+h=${0##*/}
+echo "usage : "$h" bash OutputFileName"
+exit 1
+fi
+
+substr="/data/data/com.termux/files/usr/bin/"
+str=$(type $1 2>/dev/null)
+if [[ $? = 0 && $str == *"$substr"* ]]; then
+d_str=${#str}
+prefix=${str%%$substr*}
+index=${#prefix}
+str_2='#!'
+str_2+=${str:$index:d_str}
+echo $str_2
+echo $str_2 >> $2
+chmod +x $2
+ls -lh $2
+cat $2
+else
+echo "chyba zadani "$1
+fi

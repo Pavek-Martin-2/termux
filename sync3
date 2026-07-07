@@ -1,0 +1,5 @@
+#!/data/data/com.termux/files/usr/bin/bash
+sync2
+ls ~/storage/external-1/ > /dev/null && ls ~/storage/external-2/ > /dev/null && rsync -avr --delete ~/storage/external-1/ ~/storage/external-2/
+#rsync -avr --delete  ~/storage/external-1/ ~/storage/external-2/
+echo "hotovo sync3"

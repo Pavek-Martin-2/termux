@@ -1,0 +1,23 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+clear
+
+echo "rwx rwx rwx"
+echo "421 421 421"
+echo "-w- -w- -w-"
+echo " 2   2   2 "
+
+touch 222.txt
+chmod 222 222.txt
+ls -lh 222.txt
+rm -f 222.txt
+
+touch 400.txt
+chmod 400 400.txt
+ls -lh 400.txt
+rm -f 400.txt
+
+echo "atd."
+
+
+

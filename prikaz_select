@@ -1,0 +1,14 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+PS3="Vybette jedno z mest: "
+select mesto in Brno Olomouc Prostejov Ostrava Znojmo Kromeriz QUIT
+do
+if [ $mesto = QUIT ]
+then
+echo "dekuju za vyber! "
+break
+fi
+echo "Vybral jste mesto $mesto. "
+echo "To je vyber cislo $REPLY. "
+echo
+done

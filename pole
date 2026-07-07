@@ -1,0 +1,16 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+pole=(
+"a"
+"    b"
+"c"
+)
+
+declare -p pole
+
+echo ${pole[0]}
+echo ${pole[1]}
+printf -v pole[1]
+# nezobrazuje mezery !
+echo ${pole[2]}
+

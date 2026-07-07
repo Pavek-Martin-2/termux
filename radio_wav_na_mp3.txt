@@ -1,0 +1,7 @@
+for i in *.wav
+do ffmpeg -i $i ${i:0:11}"mp3"
+done
+
+
+
+for i in *.wav;do ffmpeg -i $i ${i:0:11}"mp3"; done

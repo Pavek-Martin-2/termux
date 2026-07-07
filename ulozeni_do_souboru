@@ -1,0 +1,17 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+content=pwd
+echo $content
+
+printf '%s.' "$content" >save
+unset content
+#cat save
+
+content=$( <save )
+echo $content
+content=${content%?}
+echo $content" nacteno"
+
+#source save
+eval $content
+

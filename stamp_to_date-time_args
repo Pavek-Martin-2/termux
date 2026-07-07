@@ -1,0 +1,16 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+if [ -z "$1" ]
+then
+h=${0##*/}
+echo $h" 1723984244"
+exit 1
+fi
+
+stamp=$1
+#stamp=$(date +%s)
+echo $stamp
+
+datum_cas=$(date +'%d.%m.%Y %H:%M:%S' -d @$stamp)
+echo $datum_cas
+

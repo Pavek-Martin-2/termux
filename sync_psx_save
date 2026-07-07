@@ -1,0 +1,4 @@
+#!/data/data/com.termux/files/usr/bin/bash
+cd ~
+rsync -avr shared/MatsuPlayer_test3/ storage/external-1/zaloha/MatsuPlayer_test3
+echo "hotovo sync_psx_save"

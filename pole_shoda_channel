@@ -1,0 +1,32 @@
+#!/data/data/com.termux/files/usr/bin/bash
+channel="d3x128"
+#declare -p channel
+a=("aa" "AA" "bb" "BB" "cc" "CC")
+#a=("aa" "AA" "bb" "BB" "cc" "CC" "kk")
+#a=("aa" "AA")
+#a=()
+a=("d3x128" "dexovo")
+#declare -p a
+la=${#a[@]}
+#echo $la
+m=$(( $la % 2 ))
+#echo $m
+if [ $m != 0 ]
+then
+echo "chybna delka pole"
+exit 1
+fi
+for (( i=0; i<$la; i=i+2 ))
+do
+k=${a[$i]}
+#echo "${a[$i]}"
+#echo $k
+if [ $channel == $k ]
+then
+channel=${a[$i+1]}
+#echo "shoda"
+break
+fi
+done
+echo $channel
+#declare -p channel

@@ -1,0 +1,11 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+mes=$(date +%m)
+mes="01"
+echo $mes
+if [ ${mes:0:1} == "0" ]
+then
+mes=${mes:1:1}
+fi
+echo $mes
+

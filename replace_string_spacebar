@@ -1,0 +1,19 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+
+a="abc def"
+b="ghi  jklz"
+
+echo $a
+echo $b
+
+
+aa="${a// /_}"
+bb="${b// /_}"
+
+
+echo $aa
+echo $bb
+
+
+

@@ -1,0 +1,9 @@
+#!/data/data/com.termux/files/usr/bin/bash
+grep -i "$1" <<+
+Holy Petr 234378098
+Buk Jiri 586578356
+Hola Hana 3459765356
+Kuchtova Jirina 358312988
+Bratr Petr 574385357
+Kolik Jiri 357989567
++

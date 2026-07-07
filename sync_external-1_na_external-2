@@ -1,0 +1,7 @@
+#!/data/data/com.termux/files/usr/bin/bash
+sync2
+ls ~/storage/external-2/youtube_videa/ 2>/dev/null || mkdir ~/storage/external-2/youtube_videa/
+sleep 2
+ls ~/storage/external-1/ > /dev/null && ls ~/storage/external-2/ > /dev/null && rsync -avr ~/storage/external-1/youtube_videa/ ~/storage/external-2/youtube_videa/ && rm -rf ~/storage/external-1/youtube_videa/*
+rsync -avr --delete  ~/storage/external-1/zaloha/ ~/storage/external-2/zaloha/
+echo "hotovo sync_ex1_na_ex2"

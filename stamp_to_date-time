@@ -1,0 +1,7 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+stamp=$(date +%s)
+echo $stamp
+
+datum_cas=$(date +'%d.%m.%Y %H:%M:%S' -d @$stamp)
+echo $datum_cas

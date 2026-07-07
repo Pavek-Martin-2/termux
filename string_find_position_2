@@ -1,0 +1,33 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+str="abcde.jpeg"
+#substr="o"
+substr="."
+
+d_str=${#str}
+
+echo $str
+echo "012345678"
+echo $d_str
+
+
+prefix=${str%%$substr*}
+index=${#prefix}
+
+if [[ index -ne ${#str} ]]; then
+nalezeno=$index
+#echo $index
+#else
+#echo "nenalezeno"
+#exit 1
+fi
+
+echo $nalezeno
+
+file_name=${str:0:$nalezeno}
+echo $file_name
+
+#file_type=${str:$nalezeno:${#str}}
+file_type=${str:$nalezeno:d_str}
+echo $file_type
+

@@ -1,0 +1,12 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+set -- 4 6 5 10
+echo "$@"
+suma=0
+for i in "$@"
+do
+(( suma+= i ))
+done
+echo "$suma"
+
+

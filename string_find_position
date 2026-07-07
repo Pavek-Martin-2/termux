@@ -1,0 +1,33 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+# https://stackoverflow.com/questions/5031764/position-of-a-string-within-a-string-using-linux-shell-script
+
+a="abcde.jpg"
+#a="abcde.jpg"
+
+b="."
+
+d_a=${#a}
+
+echo $a
+echo "012345678"
+echo $d_a
+
+strindex() {
+  x="${1%%"$2"*}"
+  [[ "$x" = "$1" ]] && echo -1 || echo "${#x}"
+}
+
+#strindex "$a" "$b"   # prints 4
+nalezeno=$(strindex "$a" "$b")   # prints 4
+
+echo $nalezeno
+
+file_name=${a:0:$nalezeno}
+echo $file_name
+
+#file_type=${a:$nalezeno:${#a}}
+file_type=${a:$nalezeno:d_a}
+echo $file_type
+
+

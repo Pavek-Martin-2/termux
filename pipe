@@ -1,0 +1,9 @@
+#!/data/data/com.termux/files/usr/bin/bash
+mkfifo named_pipe
+#echo "Hi" > named_pipe &
+echo $(date)>> named_pipe &
+cat named_pipe
+rm named_pipe
+
+# https://stackoverflow.com/questions/4113986/example-of-using-named-pipes-in-linux-shell-bash/4114048
+

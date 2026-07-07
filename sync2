@@ -1,0 +1,18 @@
+#!/data/data/com.termux/files/usr/bin/bash
+cd ~
+cp -v /data/data/com.termux/files/usr/bin/all /data/data/com.termux/files/home/work/all
+cp -v /data/data/com.termux/files/usr/etc/bash.bashrc /data/data/com.termux/files/usr/etc/bash.bashrc_zaloha ~/storage/external-1/zaloha/
+#rsync -avr --delete ~/navody/ storage/external-1/zaloha/navody/
+#rsync -avr --delete ~/../usr/bin/ storage/external-1/zaloha/bin/
+rsync -avr --delete ~/work/ storage/external-1/zaloha/work/
+#rsync -avr --delete storage/shared/MatsuPlayer_test3/ storage/external-1/zaloha/MatsuPlayer_test3/
+#rsync -avr --delete storage/shared/n64emulatorpro/ storage/external-1/zaloha/n64emulatorpro/
+#rsync -avr --delete storage/shared/dos/ storage/external-1/zaloha/dos/
+rsync -avr --delete storage/shared/Bluetooth/ storage/external-1/zaloha/bluetooth/
+#rsync -avr storage/shared/Pictures/Screenshots/ storage/external-1/zaloha/Screenshots/ && rm -f storage/shared/Pictures/Screenshots/*
+#rsync -avr shared/MatsuPlayer_test3/psx/others/ storage/external-1/zaloha/Screenshots/ && rm -f shared/MatsuPlayer_test3/psx/others/*
+#rsync -avr shared/MatsuPlayer_test3/ storage/external-1/zaloha/MatsuPlayer_test3
+#rsync -avr shared/FM\ Recording/  storage/external-1/zaloha/FM\ Recording/
+rsync -avr --delete /storage/emulated/0/Marvin/ storage/external-1/zaloha/Marvin/
+
+echo "hotovo sync2"

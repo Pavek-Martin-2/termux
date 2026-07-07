@@ -1,0 +1,13 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+#filename="dokument.pdf"
+filename=$1
+
+# 1. Název bez přípony:
+name="${filename%.*}"
+
+# 2. Samotná přípona:
+ext="${filename##*.}"
+
+echo "Název bez přípony: $name"    # vypíše "dokument"
+echo "Přípona: $ext"              # vypíše "pdf"

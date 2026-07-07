@@ -1,0 +1,15 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+vt=3
+for i in {1..25}
+do
+#vteriny=$(( 30 + $RANDOM % 5 + 1 ))
+vteriny=$(( $vt + $RANDOM % 5 + 1 ))
+desetiny=$(( $RANDOM % 10 + 0 ))
+
+cekej="sleep "$vteriny"."$desetiny
+echo $cekej
+eval $cekej
+
+done
+

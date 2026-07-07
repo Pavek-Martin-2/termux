@@ -1,0 +1,31 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+# Funkce, která určí, zda je rok přestupný
+is_leap_year() {
+  local year=$1
+
+  if (( year % 400 == 0 )); then
+    echo "$year je přestupný rok."
+  elif (( year % 100 == 0 )); then
+    echo "$year není přestupný rok."
+  elif (( year % 4 == 0 )); then
+    echo "$year je přestupný rok."
+  else
+    echo "$year není přestupný rok."
+  fi
+}
+
+# Kontrola, zda je zadán právě jeden argument
+if [ $# -ne 1 ]; then
+  echo "Použití: $0 rok"
+  exit 1
+fi
+
+# Kontrola, zda je argument číslo (kladné celé číslo)
+if ! [[ "$1" =~ ^[0-9]+$ ]]; then
+  echo "Chyba: zadaný rok musí být číslo."
+  exit 1
+fi
+
+# Zavolání funkce pro kontrolu přestupnosti roku
+is_leap_year "$1"
