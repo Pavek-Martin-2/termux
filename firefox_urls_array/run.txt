@@ -1,0 +1,14 @@
+#toto funguje v knihovne na jejich pocitaci
+
+
+bash < ./facebook_7.sh
+
+
+bash < ./facebook_8.sh
+
+bash < ./facebook_8.sh > o8.bat
+
+bash < ./facebook_8.sh > o8.sh
+
+
+

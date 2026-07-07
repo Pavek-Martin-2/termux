@@ -1,0 +1,16 @@
+define fact_rec (n){
+if (n < 0 ) {
+print "oops?";
+halt;
+}
+if (n < 2 ) return 1;
+return n*fact_rec(n-1);
+}
+
+print "factorial 4 = "; fact_rec(4)
+print "factorial 8 = "; fact_rec(8)
+print "factorial 10 = "; fact_rec(10)
+print "factorial 12 = "; fact_rec(12)
+print "factorial 60 = "; fact_rec(60)
+quit
+

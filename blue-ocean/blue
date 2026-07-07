@@ -1,0 +1,28 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+W=$(tput cols)
+
+for ((x=0; x<W; x++)); do
+  B[x]=$RANDOM
+done
+
+while :; do
+  for ((x = 0; x < W; x++)); do
+    ((
+      _L = x         ? B[x - 1] : RANDOM,
+      _R = x < W - 1 ? B[x + 1] : RANDOM,
+      B[x] = (_L + B[x] + _R) / 3
+    ))
+    ((
+      B[x] = RANDOM % 2
+           ? B[x] * 11 / 10
+           : B[x] *  9 / 10,
+      B[x] = B[x] > 32767
+           ? 32767
+           : B[x]
+    ))
+    echo -ne "\e[48;5;$((16 + B[x] * 6 / 32768))m "
+  done
+  sleep 0.01
+  echo
+done
