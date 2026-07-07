@@ -1,0 +1,10 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+
+up=$(youtube-dl --get-filename -o '%(uploader_id)s' $1)
+echo $up
+
+ch=$(youtube-dl --get-filename -o '%(channel)s' $1)
+echo $ch
+
+

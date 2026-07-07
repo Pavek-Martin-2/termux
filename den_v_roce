@@ -1,0 +1,54 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+# Skript pro výpočet čísla dne v roce bez použití příkazu date
+
+# Kontrola, zda byl zadán právě jeden argument
+if [ "$#" -ne 1 ]; then
+    echo "Použití: $0 YYYY-MM-DD"
+    exit 1
+fi
+
+input_date="$1"
+
+# Kontrola, zda datum odpovídá formátu YYYY-MM-DD
+if ! [[ "$input_date" =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2}$ ]]; then
+    echo "Chyba: Datum musí být ve formátu YYYY-MM-DD."
+    exit 1
+fi
+
+# Rozdělení data na rok, měsíc a den
+IFS="-" read -r year month day <<< "$input_date"
+
+# Převedení hodnot na čísla (odstranění vedoucích nul)
+year=$((10#$year))
+month=$((10#$month))
+day=$((10#$day))
+
+# Kontrola, zda je měsíc v platném rozsahu
+if [ "$month" -lt 1 ] || [ "$month" -gt 12 ]; then
+    echo "Chyba: Neplatný měsíc ($month)."
+    exit 1
+fi
+
+# Počet dní v jednotlivých měsících pro běžný rok
+days_in_month=(31 28 31 30 31 30 31 31 30 31 30 31)
+
+# Kontrola, zda je rok přestupný, a úprava počtu dní v únoru
+if (( (year % 400 == 0) || (year % 4 == 0 && year % 100 != 0) )); then
+    days_in_month[1]=29
+fi
+
+# Kontrola, zda je den v platném rozsahu pro daný měsíc
+if [ "$day" -lt 1 ] || [ "$day" -gt "${days_in_month[$((month-1))]}" ]; then
+    echo "Chyba: Neplatný den ($day) pro zadaný měsíc ($month)."
+    exit 1
+fi
+
+# Výpočet čísla dne v roce: součet dnů z předchozích měsíců + aktuální den
+day_number="$day"
+for (( i=0; i<month-1; i++ )); do
+    day_number=$(( day_number + days_in_month[i] ))
+done
+
+echo "Pro datum $input_date je číslo dne v roce: $day_number"
+#!/data/data/com.termux/files/usr/bin/bash

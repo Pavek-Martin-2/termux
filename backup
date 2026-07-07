@@ -1,0 +1,20 @@
+#!/data/data/com.termux/files/usr/bin/bash
+cas=$(date +%d_%m_%Y-%H_%M)
+#if [ $1 == "t" ]
+#then
+echo "zaloha pres termux-backup API"
+termux-backup ~/storage/external-1/zaloha/termux_backup/termux-backup_API_$cas.tgz
+echo "obnoveni = termux-restore filename"
+#else
+#echo $cas
+home="home_"
+home+=$cas
+home+=".tgz"
+#echo $home
+usr="usr_"
+usr+=$cas
+usr+=".tgz"
+tar -cvzf ~/storage/external-1/zaloha/termux_backup/$home /data/data/com.termux/files/home/
+tar -cvzf ~/storage/external-1/zaloha/termux_backup/$usr /data/data/com.termux/files/usr/
+echo "hotovo backup"
+#fi

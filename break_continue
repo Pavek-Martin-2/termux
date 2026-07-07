@@ -1,0 +1,19 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+for index in 100 300 500 700 900 1100 1300 1500 90 30
+do
+if [ $index -le 600 ] # -le mensi nebo roven
+then
+echo "pokracuj . . ."
+continue
+fi
+
+echo $index
+
+if [ $index -ge 1000 ] # -ge vetsi nebo roven
+then
+echo "prerus"
+break
+fi
+done
+

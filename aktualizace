@@ -1,0 +1,9 @@
+#!/data/data/com.termux/files/usr/bin/bash
+#speedtest
+#sleep 10
+apt-get update && apt-get upgrade -y
+pkg update && pkg upgrade -y
+pkg autoclean
+echo "hotovo"
+# apt-get autoremove --purge mplayer
+

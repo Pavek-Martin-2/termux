@@ -1,0 +1,18 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+if [ -z "$1" ]; then
+h=${0##*/}
+echo $h" instagram_video_stamp.mp4"
+exit 1
+fi
+
+url=$1
+echo $url
+
+d_url=${#url}
+
+url_stamp=${url:$(( d_url - 14)):10}
+echo $url_stamp
+
+datum_mp4=$(date +'%d.%m.%Y %H:%M:%S' -d @$url_stamp)
+echo $datum_mp4

@@ -1,0 +1,12 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+if [[ -n $1 && "$1" == "s" ]]
+# -n = $1 neni nill
+then
+# s
+echo "zde"
+else
+# 1-9
+echo "zde 2"
+fi
+

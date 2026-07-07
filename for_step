@@ -1,0 +1,8 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+for i in {2..11..3}
+do
+echo $i
+echo "2 ^ $i" | bc
+echo
+done

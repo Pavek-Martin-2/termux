@@ -1,0 +1,29 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+inst_users=(
+"kirstendunst"
+"anri_okita"
+"e.w.i.t.c.h"
+"luci_kincova"
+"irinadeikalo"
+"dashik_gubanova"
+# sem pridavat dalsi radky
+)
+
+d=${#inst_users[@]}
+echo $d" uzivatwlu instagramu"
+for mix in {1..100}
+do
+rnd_1=$(( $RANDOM % $d + 0 ))
+rnd_2=$(( $RANDOM % $d + 0 ))
+#echo $rnd_1
+#echo $rnd_2
+
+pom=${inst_users[$rnd_1]}
+#echo $pom
+inst_users[$rnd_1]=${inst_users[$rnd_2]}
+inst_users[$rnd_2]=$pom
+done
+
+echo ${inst_users[@]}
+

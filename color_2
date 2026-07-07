@@ -1,0 +1,45 @@
+#!/data/data/com.termux/files/usr/bin/lua
+
+-- definice barev
+local colors = {
+  reset    = "\27[0m",
+  bold     = "\27[1m",
+  bold_red = "\27[1m\27[31m",
+  black    = "\27[30m",
+  red      = "\27[31m",
+  green    = "\27[32m",
+  yellow   = "\27[33m",
+  blue     = "\27[34m",
+  magenta  = "\27[35m",
+  cyan     = "\27[36m",
+  white    = "\27[37m",
+  gray     = "\27[90m",
+  lightred = "\27[91m",
+}
+
+-- tisk s barvou
+local function print_color(color, ...)
+  local seq = colors[color] or ""
+  local reset = colors.reset
+  io.write(seq)
+  print(...)
+  io.write(reset)
+end
+
+print_color("red",    "Toto je červený text")
+print_color("bold_red", "Toto je bold_red text")
+print_color("green",  "Toto je zelený text")
+print_color("yellow", "Pozor: varování!")
+print_color("bold",   "Důrazný text")
+print_color("reset",   "reset")
+print_color("blue",   "Info: modrý nápis")
+print_color("foo",    "Neznámá barva – bez formátování")
+
+print_color("blue","bold",    "blue bold")
+print("jenom print")
+
+
+
+
+
+

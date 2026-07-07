@@ -1,0 +1,106 @@
+#!/data/data/com.termux/files/usr/bin/bash
+cekej_vterin=180
+inst_url="https://www.instagram.com/"
+
+inst_users=(
+"anri_okita"
+"irinadeikalo"
+"dashik_gubanova"
+"alinka_rapunzel"
+"luci_kincova"
+"make_upbyluci"
+"maccosmeticscz"
+"zasluncevdusi"
+"arianacentrals"
+"av_krizova"
+# sem pridavat dalsi radky
+)
+
+d=${#inst_users[@]}
+
+if [ "$1" == "h" ]
+then
+h=${0##*/} # novinka barinka
+#h=${0:36:${#0}} stary
+echo $h" s otevre vse 0-"$(($d - 1))" rychle"
+echo "nebo"
+for (( aa = 0; aa <= $d-1; aa++))
+do
+echo $h" "$aa" = "${inst_users[$aa]}
+done
+
+exit 0
+fi
+#
+if [[ -n $1 && "$1" == "s" ]]
+# -n = $1 neni nill
+then
+# s
+cekej_vterin=0
+#echo "zde"
+fi
+
+# 1-9
+if [[ -n $1 && "$1" != "s" ]]
+then
+#echo "zde 2"
+cmd2="termux-open-url "
+cmd2+=$inst_url
+cmd2+=${inst_users[$1]}
+cmd2+="/"
+echo $cmd2
+eval $cmd2
+exit 0
+fi
+
+#echo "zde 3"
+#
+echo $d" uzivatelu instagramu"
+for mix in {1..100}
+do
+rnd_1=$(( $RANDOM % $d + 0 ))
+rnd_2=$(( $RANDOM % $d + 0 ))
+#echo $rnd_1
+#echo $rnd_2
+
+pom=${inst_users[$rnd_1]}
+#echo $pom
+inst_users[$rnd_1]=${inst_users[$rnd_2]}
+inst_users[$rnd_2]=$pom
+done
+
+#echo ${inst_users[@]}
+#exit 0
+
+poc=0
+
+for user in ${inst_users[@]}
+do
+cmd="termux-open-url "
+cmd+=$inst_url$user
+cmd+="/"
+((poc++))
+echo $cmd
+eval $cmd
+
+#echo $poc
+
+#sleep $(( 30 + $RANDOM % 5 + 1 ))
+vteriny=$(( $cekej_vterin + $RANDOM % 5 + 1 ))
+desetiny=$(( $RANDOM % 10 + 0 ))
+
+if [ $d -eq $poc ]
+# -eq rovna se
+then
+play-audio ~/storage/external-1/zaloha/beep.mp3
+fi
+
+if [ $d -ne $poc ]
+# -ne nerovna se
+then
+cekej="sleep "$vteriny"."$desetiny
+#echo $cekej
+eval $cekej
+fi
+
+done

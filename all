@@ -1,0 +1,6 @@
+#!/data/data/com.termux/files/usr/bin/bash
+d=$(cat $0 | wc -l); d=$((d-3));c=1
+for((x=d;x>=1;x--));do echo "["$c"/"$d"]";((c++));y $(tail -n $x $0 | head -n 1);done;exit 1
+https://www.youtube.com/watch?v=-Q2lO7Vfw18
+
+

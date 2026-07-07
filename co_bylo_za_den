@@ -1,0 +1,9 @@
+#!/data/data/com.termux/files/usr/bin/bash
+if [ -z "$2" ]
+then
+echo "co_bylo_za_den mesic rok"
+echo "co_bylo_za_den 3 1971"
+exit 1
+fi
+
+cal -m $1 $2

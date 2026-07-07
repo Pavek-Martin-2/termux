@@ -1,0 +1,11 @@
+#!/data/data/com.termux/files/usr/bin/bash
+if [ -z "$1" ]; then
+echo "args_shift a b c d"
+exit 1
+fi
+
+for i in $*; do
+echo $1
+shift
+done
+

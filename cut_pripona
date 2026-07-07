@@ -1,0 +1,28 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+file="689997y7.txt"
+echo $file
+
+x=${file%%.*}
+# urizne rozdelovac a priponu
+echo $x
+
+file2='work/abc.txt'
+echo $file2
+y=${file2##*/}
+echo $y
+
+file3='work/qqqq/jjjj/def.txt'
+echo $file3
+z=${file3##*/}
+echo $z
+
+aa="01"
+echo $aa
+echo ${aa#?}
+
+
+a="xyz"
+echo $a
+echo ${a%?}
+echo ${a%%??}

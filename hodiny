@@ -1,0 +1,33 @@
+#!/data/data/com.termux/files/usr/bin/bash
+clear
+cas=$(date +%H' : '%M)
+#echo $cas
+figlet $cas
+den3=$(date +%d)
+#tyden=$(date +%U" tyden v roce")
+tyden=$(date +%U)
+#(( tyden++ ))
+den_v_roce=$(date +%j" den v roce")
+datum=$(date +%d' . '%m' . '%Y)
+mes=$(date +%m)
+rok=$(date +%Y)
+utc=$(date +%z)
+#echo $datum
+#figlet $datum
+den=$(date +%w)
+dc=("Nedele" "Pondeli" "Utery" "Streda" "Ctvrtek" "Patek" "Sobota")
+me=("Leden" "Unor" "Brezen" "Duben" "Kveten" "Cerven" "Cervenec" "Srpen" "Zari" "Rijen" "Listopad" "Prosinec")
+den2=${dc[den]}
+#echo $mes
+if [ ${mes:0:1} == "0" ]
+then
+mes=${mes:1:1}
+fi
+mes2=${me[mes - 1]}
+#echo $den
+figlet $den2
+echo $den3" "$mes2" "$rok" "$utc" UTC"
+#echo $den_v_roce
+echo $den_v_roce
+echo $tyden" tyden v roce"
+cal -m -v

@@ -1,0 +1,4 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+date -r $1 "+%d_%m_%Y-%H_%M"
+ls --full-time $1

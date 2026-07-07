@@ -1,0 +1,4 @@
+#!/data/data/com.termux/files/usr/bin/bash
+h=${0:3:${#0}}
+echo $h
+

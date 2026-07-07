@@ -1,0 +1,6 @@
+#!/data/data/com.termux/files/usr/bin/bash
+while true
+do
+echo $(date +%s)
+sleep 10
+done
