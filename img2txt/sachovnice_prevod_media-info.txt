@@ -1,0 +1,26 @@
+General
+Complete name             : C:\Users\DELL\Documents\ubuntu\bash\img2txt\aaa.bmp
+Format                    : Bitmap
+File size                 : 1.99 KiB
+
+Image
+Format                    : RGB
+Width                     : 25 pixels
+Height                    : 25 pixels
+Color space               : RGB
+Bit depth                 : 24 bits
+
+prevedeno z bmp do txt a pak zase zpatky do bmp
+
+General
+Complete name             : C:\Users\DELL\Documents\ubuntu\bash\img2txt\sachvnice_25x25_bodu.bmp
+Format                    : Bitmap
+File size                 : 1.97 KiB
+
+Image
+Format                    : RGB
+Width                     : 25 pixels
+Height                    : 25 pixels
+Color space               : RGB
+Bit depth                 : 24 bits
+

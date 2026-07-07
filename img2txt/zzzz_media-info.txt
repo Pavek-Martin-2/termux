@@ -1,0 +1,17 @@
+General
+Complete name                            : zx_prime-box-48.png
+Format                                   : PNG
+Format/Info                              : Portable Network Graphic
+File size                                : 11.0 KiB
+
+Image
+Format                                   : PNG
+Format/Info                              : Portable Network Graphic
+Format_Compression                       : LZ77
+Width                                    : 779 pixels
+Height                                   : 541 pixels
+Bit depth                                : 24 bits
+Compression mode                         : Lossless
+Stream size                              : 11.0 KiB (100%)
+
+

@@ -1,0 +1,27 @@
+# ImageMagick pixel enumeration: 779,10,65535,srgb
+# ImageMagick pixel enumeration: 779,541,65535,srgb   >> ze souboru prime-box.txt
+
+458,9: (65535,65535,65535)  #FFFFFF  white
+459,9: (0,0,0)  #000000  black
+
+
+pozn. na konci souboru musi byt jedna prazdna radka
+
+15,8: (0,0,0)  #000000  black
+16,8: (0,0,0)  #000000  black
+17,8: (0,0,0)  #000000  black
+18,8:  (65535,65535,65535)  #FFFFFF  white
+19,8:  (65535,65535,65535)  #FFFFFF  white
+20,8:  (65535,65535,65535)  #FFFFFF  white
+21,8: (0,0,0)  #000000  black
+22,8: (0,0,0)  #000000  black
+23,8: (0,0,0)  #000000  black
+24,8:  (65535,65535,65535)  #FFFFFF  white
+25,8:  (65535,65535,65535)  #FFFFFF  white
+26,8:  (65535,65535,65535)  #FFFFFF  white
+27,8: (0,0,0)  #000000  black
+28,8: (0,0,0)  #000000  black
+29,8: (0,0,0)  #000000  black
+
+
+zacatek soubory zx.jpg privni tri body
