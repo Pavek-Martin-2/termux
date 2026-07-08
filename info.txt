@@ -1,2 +1,7 @@
-před pár dněma se mě "rozbila" Android aplikace Termux, kterou jsem léta používal, napřed jsem jí chtěl přeinslalovat, ale pak jsem si uvědomil že už vní vlastně moc nedělám, protože už na malej deseti placovej diplej na tabletu blbě vydim a že spiš dělam na velkym dislpeji na notebooku, každopadně jsem nechtěl nic mazat, protože to všechno zabralo
+před pár dněma se mě "rozbila" Android aplikace Termux, kterou jsem léta používal, napřed jsem jí chtěl přeinslalovat, ale pak jsem si uvědomil že už vní vlastně moc nedělám, protože už na malej deseti placovej diplej na tabletu blbě vydim a
+že spiš dělam na velkym dislpeji na notebooku, každopadně jsem nechtěl nic mazat, protože to všechno zabralo dost času takže jsem celej pracovní adresář tak jak byl jsem prostě "nasypal" sem a jetě to mam pak doma zalohavaní na cd-čku
+v budoucnu až vtom dělat nebudu a spíš budu dělat na velkym notebooku v Ubuntu shellu když už, ale nejvíc bych se chtěl věnovat PowerShellu
+a take C++
+
+8.7.2026
 
