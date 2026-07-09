@@ -1,5 +1,14 @@
-nastaveni jasu a kontrastu videa
------------------------------------
+rozsah brightness -0.1 az 1.0 ( default 0 ), jas
+
+rozsah contrast - -2.0 a 2.0 ( default 1.0 ), rozdil mezi tmavymi a svetlimi misty
+
+rozsah saturation 0.0 az 3.0 ( default 1.0 ), hodnota 0 udela cernobile video
+
+rozsah gamma 0.1 az 10.0 ( default 1.0 )
+
+-c:a copy out.mp4 (na zvuk ser nebude vubec sahat )
+
+-----------------------------------------------------------------------------------------
 
 ffmpeg -i in.mp4 -vf "eq=brightness=0.1" out_1.mp4
 lehke zesvetleni
@@ -26,10 +35,27 @@ mpv --gamma=3 spojene_Kour_1990.mp4
 
 set vid="--contrast=3 --brightness=3 --gamma=3"
 
+--------------------------- zmena pouze u urciteho useku videa ----------------
+cernobilost videa
+saturation = 0.0 az 3.0
+ffmpeg -i in.mp4 -vf "eq=saturation=0" cernobile_video.mp4
+
+ffmpeg -i in.mp4 -vf "eq=saturation=0:gamma=1.5" out_4.mp4
 
 
+od 0s do 5s bude cernobile video a pak zase puvodni
+ffmpeg -i in.mp4 -vf "eq=saturation=0:enable='between(t,0,5)'" -c:a copy out_5.mp4
 
 
+5 - 10.032
+ffmpeg -i in.mp4 -vf "eq=saturation=0:enable='between(t,5,10.032)'" -c:a copy out_6.mp4
+
+00:00:05 - 00:00:10.32 bude cernobili, jinak puvodni a na zvuk se nesaha
+udela to opravdu presne na tisiciny
+ffmpeg -i in.mp4 -vf "eq=saturation=0:enable='between(t,05.000,10.032)'" -c:a copy out_7.mp4
+
+ffmpeg -i in.mp4 -vf "eq=saturation=0:enable='between(t,05.000)'" -c:a copy out_8.mp4
+od 5s az do konce vida zatim ale jeste nevyzkoseno( nezadava se vubec koncovej cas)
 
 
 
