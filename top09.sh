@@ -1,9 +1,6 @@
 #!/data/data/com.termux/files/usr/bin/bash
 clear
 
-#url="https://youtube.com/@GustavoLlusa"
-
-
 url="https://youtube.com/@topvidea"
 
 
