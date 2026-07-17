@@ -60,8 +60,6 @@ dnes=os.date("%Y-%d-%m")
 datePairs = {
 -- rok-den-mesic
 {"1971-28-03", dnes, "Martin Pavek"},
-{"1958-11-06", dnes, "Miroslava Safrankova"},
-{"1989-17-11", dnes, "revoluce"},
 {"2000-01-01", dnes, "millenium"}
 }
 
