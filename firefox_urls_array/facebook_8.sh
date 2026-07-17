@@ -7,11 +7,7 @@ pole_urls=(
 "https://www.facebook.com/luciebila/"
 "https://www.facebook.com/Gameballcz/"
 "https://www.facebook.com/zcaputova/"
-"https://www.facebook.com/marketa.pekarova.adamova.top09/"
 "https://www.facebook.com/top09cz/"
-"https://www.facebook.com/p/Vladim%C3%ADra-Mu%C5%BE%C3%ADkov%C3%A1-100009406632859/"
-"https://www.facebook.com/hana.pilecka/"
-"https://cs-cz.facebook.com/marketa.maskova.73/"
 "https://www.facebook.com/havelztopky/"
 "https://www.facebook.com/vlvalek/"
 )
