@@ -1,0 +1,52 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+# sync 5, pouziva skript mir2
+
+cekej=2
+
+: "
+echo -e '\033[0;30mcerna'
+echo -e '\033[0;31mcetvena'
+echo -e '\033[0;32mzelena'
+echo -e '\033[0;33mzluta'
+echo -e '\033[0;34mmodra'
+echo -e '\033[0;35mfialova'
+echo -e '\033[0;36mcyan'
+echo -e '\033[0;37mbila'
+echo -e '\033[0mdefault'
+"
+#echo -e '\033[0;35msync 5\033[0m'
+echo "SYNC 5"
+
+echo -e '\033[0;34mall\033[0m'
+sleep $cekej
+cp -v --update /data/data/com.termux/files/usr/bin/all /data/data/com.termux/files/home/work/all
+
+echo -e '\033[0;34mbash.bashrc\033[0m'
+sleep $cekej
+cp -v --update /data/data/com.termux/files/usr/etc/bash.bashrc /data/data/com.termux/files/usr/etc/bash.bashrc_zaloha ~/storage/external-1/zaloha/
+
+echo -e '\033[0;36mwork\033[0m'
+sleep $cekej
+mir2 ~/work/ ~/storage/external-1/zaloha/work/
+
+echo -e '\033[0;36mmarvin\033[0m'
+sleep $cekej
+mir2 ~/storage/shared/Marvin/ ~/storage/external-1/zaloha/Marvin/
+
+echo -e '\033[0;36mBluetooth\033[0m'
+sleep $cekej
+mir2 ~/storage/shared/Bluetooth/ ~/storage/external-1/zaloha/Bluetooth/
+
+echo -e '\033[0;36myoutube_videa\033[0m'
+sleep 1
+ls ~/storage/external-2/youtube_videa/ 2>/dev/null || mkdir ~/storage/external-2/youtube_videa/ 2>/dev/null
+sleep 1
+#mir2 ~/storage/external-1/youtube_videa/ ~/storage/external-2/youtube_videa/
+mir2 ~/storage/external-1/youtube_videa/ ~/storage/external-2/youtube_videa/ && rm -rf ~/storage/external-1/youtube_videa/*
+
+echo -e '\033[0;36mzaloha\033[0m'
+sleep $cekej
+mir2 ~/storage/external-1/zaloha/ ~/storage/external-2/zaloha/
+
+echo "HOTOVO sync 5"

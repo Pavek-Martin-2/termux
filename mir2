@@ -1,0 +1,78 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+: "
+skript, mir2
+skript se snazi nahradit utilitu "rsync" a dela to ze synchronizuje obsah adresre "source" do "target"
+updatovane soubory z adresre "source" aktualizuje v adresari "target" ( cp -u )
+dale, pokud slozka ci soubor jiz neexistuje v "source adresari" a je v "target" tak je tam smaze
+
+echo -e '\033[0;30mcerna'
+echo -e '\033[0;31mcevena'
+echo -e '\033[0;32mzelena'
+echo -e '\033[0;33mzluta'
+echo -e '\033[0;34mmodra'
+echo -e '\033[0;35mfialova'
+echo -e '\033[0;36mcyan'
+echo -e '\033[0;37mbila'
+echo -e '\033[0mdefault'
+"
+
+# kontrola, zda uzivatel zadal oba argumenty
+if [ -z "$1" ] || [ -z "$2" ]; then
+    echo -e "\033[0;33m$0 '<zdrojovy_adresar>' '<cílovy_adresar>'\033[0m"
+    exit 1
+fi
+
+# nacteni argumentu a odstraneni prípadneho lomitka na konci pro konzistenci
+ZDROJ="${1%/}"
+CIL="${2%/}"
+
+#echo $ZDROJ
+#echo $CIL
+#exit 1
+
+# kontrola, zda zdrojovy adresar existuje
+if [ ! -d "$ZDROJ" ]; then
+    echo -e "\033[0;33mzdrojovy adresar '$ZDROJ' neexistuje\033[0m"
+    # mir2 /home/pi/Documents/ps1 /home/pi/Downloads/zde
+    exit 1
+fi
+
+# kontrola, zda cilovy aderesar existuje
+if [ ! -d "$CIL" ]; then
+    echo -e "\033[0;33mcilovy adresar '$CIL' neexistuje\033[0m"
+    exit 1
+fi
+
+echo -e "\033[0;33mspoustim synchronizaci: '$ZDROJ' -> '$CIL'\033[0m"
+#sleep 1
+
+# zkopirovani novych a aktualizovanych souboru
+# pouzivame "$ZDROJ/.", aby se kopíroval obsah adresare
+# cp -avu "$ZDROJ/." "$CIL"# puvodni parametry "cp"
+cp -rvu "$ZDROJ/." "$CIL" # moje upravene parametry "cp" ( -a archive ?, viz cp --help )
+# recursive, verbose , --uptadate=olders ( older=default, viz cp -help )
+# cp -u, --update                 copy only when the SOURCE file is newer
+# cp --version = cp (GNU coreutils) 8.30 ( v ubuntu )
+# neni reseno kopirovani symlinku ( cp -l, --link     hard link files instead of copying )
+
+echo -e "\033[0;32mcistim soubory, ktere jiz ve zdroji nejsou\033[0m"
+
+# odstraneni souboru v cili, ktere uz ve zdroji neexistují
+find "$CIL" -mindepth 1 | while read -r cilova_polozka; do
+    # vypocita relativni cestu polozky vuci cili
+    relativni_cesta="${cilova_polozka#$CIL}"
+    # sestavíme cestu, kde by mela byt polozka ve zdroji
+    zdrojova_polozka="$ZDROJ$relativni_cesta"
+
+    # pokud polozka ve zdroji neexistuje, smaze ji v cíli
+    if [ ! -e "$zdrojova_polozka" ]; then
+        if [ -d "$cilova_polozka" ]; then
+            echo -e "\033[0;34mmazu slozku: $cilova_polozka\033[0m"
+            rm -rf "$cilova_polozka"
+        else
+            echo -e "\033[0;35mmazu soubor: $cilova_polozka\033[0m"
+            rm -f "$cilova_polozka"
+        fi
+    fi
+done
