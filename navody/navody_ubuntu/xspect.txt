@@ -1,4 +1,7 @@
 
+
+
+
 xspect -vga-mode 320x240 -load-immed -quick-load kruh.tap
 
 

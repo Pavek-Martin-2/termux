@@ -1,0 +1,20 @@
+zobrazuje dole u videa casovej posuvnik
+
+
+
+dela to klavesa delete a cykluje mezi - auto, always, never
+mpv --osc=no video.mp4 ( nebude zobrazovat casovej posuvnik dole jako - never)
+
+mpv--osc=yes je jako auto takze default
+
+a na dalsi ( always ) sem neprisel
+------------------------------------
+
+mpv.exe --script-opts=osc-visibility=always (funguje Windows i Ubuntu)
+
+mpv.exe --script-opts=osc-visibility=never (funguje oboji)
+
+mpv.exe --script-opts=osc-visibility=auto (toto je vlastne Default)
+
+
+

@@ -1,5 +1,4 @@
 
-
 mpv --osd-level=3 --osd-font-size=100 --osd-fractions travnikar_1.avi
 funguje --osd-fractions toto dela v osd tisiciny
 
@@ -9,7 +8,8 @@ mpv --fullscreen=yes --mute=yes --loop-file=inf --osd-level=3 --osd-font-size=10
 
 mpv --speed=0.5 --loop-file=inf --osd-level=3 --osd-font-size=100 --osd-fractions travnikar_1.avi
 
-toto --- mpv --mute=yes --fullscreen=yes --mute=yes --loop-file=inf --osd-level=3 --osd-font-size=100 --osd-fractions travnikar_1.avi
+
+mpv --mute=yes --fullscreen=yes --mute=yes --loop-file=inf --osd-level=3 --osd-font-size=100 --osd-fractions travnikar_1.avi
 
 
 
